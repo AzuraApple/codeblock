@@ -1,12 +1,10 @@
-const math = require('mathjs');
+const math = require('mathjs'); // `npm i mathjs`
 const Discord = require('discord.js');
 
+// Command Handler
 exports.run = (client, message, args, tools) => {
 
-    // We want to check if they input text
     if (!args[0]) return message.channel.send('Please input a calculation.');
-
-    // We want to try to evaluate the calculation using the mathjs package
     let resp;
     try {
         resp = math.eval(args.join(' '));

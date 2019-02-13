@@ -1,6 +1,7 @@
 const Discord = require('discord.js'); 
-const moment = require('moment');
+const moment = require('moment'); // `npm i moment`
 
+// Command Handler
 exports.run = async (client, message, args) => {
 
     let user;
@@ -13,7 +14,6 @@ exports.run = async (client, message, args) => {
 
      const member = message.guild.member(user);
 
-     // Forming the Embed
      const embed = new Discord.RichEmbed() 
         .setColor('RANDOM') 
         .setThumbnail(user.avatarURL)
@@ -27,7 +27,6 @@ exports.run = async (client, message, args) => {
         .addField('Roles:', member.roles.map(roles => `${roles.name}`).join(', '), true)
         .setFooter(`Replying to ${message.author.username}#${message.author.discriminator}`)
 
-    // Send the Embed
     message.channel.send({embed});
 
 }

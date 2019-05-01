@@ -6,5 +6,3 @@ Codeblock is a small bot made for beginners.  It includes a small amount of comm
 - Editable Auto-changing statuses function
 - Live Server status function
 - Command Handler
-
-More commands soon!

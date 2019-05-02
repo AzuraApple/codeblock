@@ -1,11 +1,9 @@
-// Required Packages 
 const Discord = require("discord.js");
 const client = new Discord.Client();
 const fs = require('fs');
 
-// Constant Variables
-const prefix = '-'; 
-const ownerID = 'YOUR OWNER ID'; 
+const prefix = process.env.PREFIX; 
+const ownerID = process.env.OWNER; 
 
 // serverStats info
 const serverStats = {
@@ -33,11 +31,10 @@ client.on('ready', () => {
         // Master:
         client.user.setPresence({ activity: { name: status }, status: 'online' }); 
 
-    }, 100000) // This runs the interval every 100000ms, or 100 seconds. - You can change this!
+    }, 100000) // This runs the interval every 100000ms, or 100 seconds. 
 
 })
 
-// Listener Events
 client.on('message', message => {
 
     // Variables
@@ -53,8 +50,7 @@ client.on('message', message => {
 
         // Auto-Reload
         delete require.cache[require.resolve(`./commands/${cmd}.js`)]; 
-
-        // Options
+        
         let ops = {
             ownerID: ownerID
         }
@@ -68,7 +64,6 @@ client.on('message', message => {
 
 });
 
-// Ready Event - Bot Online / Bot started
 client.on('ready', () => console.log('Bot Launched!'));
 
 client.on('guildMemberAdd', member => {
@@ -94,4 +89,4 @@ client.on('guildMemberRemove', member => {
 }); 
 
 // Login 
-client.login('TOKEN'); 
+client.login(process.env.TOKEN); 

@@ -1,7 +1,6 @@
 const urban = require("relevant-urban"); // `npm i relevant-urban`
 const Discord = require("discord.js"); 
 
-// Command Handler
 exports.run = async (client, message, args, tools) => {
 
     if (!args[0]) return message.channel.send(`***Please specify some text!***`);

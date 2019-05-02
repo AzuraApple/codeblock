@@ -1,6 +1,5 @@
 const Discord = require('discord.js');
 
-// Command Handler
 exports.run = async (client, message, args, tools) => {
 
     // Role Verification (Optional)
@@ -19,7 +18,6 @@ exports.run = async (client, message, args, tools) => {
 
     let msg = await message.channel.send(embed);
 
-    // React to the message
     await msg.react('✅'); 
     await msg.react('❌');
 

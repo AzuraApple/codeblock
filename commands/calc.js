@@ -1,7 +1,6 @@
 const math = require('mathjs'); // `npm i mathjs`
 const Discord = require('discord.js');
 
-// Command Handler
 exports.run = (client, message, args, tools) => {
 
     if (!args[0]) return message.channel.send('Please input a calculation.');
